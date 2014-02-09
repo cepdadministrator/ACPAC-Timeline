@@ -1,0 +1,150 @@
+$teal: 	#69bddf;
+$red:	#d2232a;
+$white:	#ffffff;
+$grey:	#cecfcb;
+$dark:	#444444;
+
+// RESPONSIVE HELPERS
+
+@mixin respond-to($media) {
+    /* Landscape phones and down */
+    @if $media == phone {
+        @media (max-width: 480px) { @content; }
+    }
+    /* Landscape phone to portrait tablet */
+    @else if $media == tablet-portrait {
+        @media (max-width: 767px) {@content; }
+    }
+    /* Portrait tablet to landscape and desktop */
+    @else if $media == tablet-landscape-desktop {
+        @media (min-width: 768px) and (max-width: 979px) { @content; }
+    }
+    /* Phone to small desktop */
+    @else if $media == small-desktop {
+        @media (max-width: 979px) { @content; }
+    }
+    /* Large desktop */
+    @else if $media == desktop {
+        @media (min-width: 980px) { @content; }
+    }
+    /* Smaller than Large desktop */
+    @else if $media == large-desktop-smaller {
+        @media (max-width: 1200px) { @content; }
+    }
+    /* Large desktop */
+    @else if $media == large-desktop {
+        @media (min-width: 1200px) { @content; }
+    }
+    // Non-Retina
+    @else if $media == non-retina {
+        @media screen and (-webkit-max-device-pixel-ratio: 1) { @content; }
+    }
+    // Retina Only
+    @else if $media == retina {
+        @media screen and (-webkit-min-device-pixel-ratio: 2) { @content; }
+    }
+    // Specific max width
+    @else {
+        @media only screen and (max-width: #{$media}px) { @content; }
+    }
+}
+
+//// END HELPERS
+
+#acpac-timeline {
+	#content {
+		@include respond-to(tablet-portrait) {
+			background-image: none;
+		}
+
+		@include respond-to(desktop) {
+			background-image: url('arrow.png');
+			background-repeat: no-repeat;
+			background-position: 0px -50px;
+		}
+		@include respond-to(large-desktop) {
+			background-image: url('arrow.png');
+			background-repeat: no-repeat;
+			background-position: 15px -50px;
+		}
+		@include respond-to(tablet-landscape-desktop) {
+			background-image: url('arrow.png');
+			background-repeat: no-repeat;
+			background-position: -20px -50px;
+		}
+	}
+	article {
+		margin-bottom: 10px;
+	}
+	
+	.students {
+		
+		background: #b4dff0; /* Old browsers */
+		background: -moz-linear-gradient(left,  #ffffff 0%, #b4dff0 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(100%,#b4dff0)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left,  #ffffff 0%,#b4dff0 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left,  #ffffff 0%,#b4dff0 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left,  #ffffff 0%,#b4dff0 100%); /* IE10+ */
+		background: linear-gradient(to right,  #ffffff 0%,#b4dff0 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#b4dff0',GradientType=1 ); /* IE6-9 */
+		
+		padding: 5px 10px;
+		margin: 10px 0;
+		.num {
+			color: $red;
+		}
+		&.no-margin {
+			margin: 0 !important;
+		}
+	}
+	
+	h1 {
+		color: $teal;
+		font-size: 28px;
+	}
+	h2 {
+		font-weight: 400;
+		font-size: 22px;
+		margin: 0;
+	}
+	h3 {
+		color: $teal;
+		font-size: 22px;
+		font-weight: 400;
+		line-height: 24px;
+		margin: 0;
+	}
+	.year {
+		background: $white;
+		color: $teal;
+		font-size: 22px;
+		line-height: 30px;
+		text-align: center;
+	}
+	#footnotes {
+		li {
+			color: $dark;
+			font-size: 10px;
+		}
+	}
+	
+	
+	.well-blue {
+		background: $teal;
+	}
+	.margin-top-min5 {
+		margin-top: -5px;
+	}
+	.margin-top-min10 {
+		margin-top: -10px;
+	}
+	.margin-bottom-10 {
+		margin-bottom: 10px;
+	}
+	.margin-bottom-20 {
+		margin-bottom: 20px;
+	}
+	.margin-bottom-30 {
+		margin-bottom: 30px;
+	}
+}
