@@ -58,17 +58,17 @@ $dark:	#444444;
 		}
 
 		@include respond-to(desktop) {
-			background-image: url('arrow.png');
+			background-image: url('images/arrow.png');
 			background-repeat: no-repeat;
 			background-position: 0px -50px;
 		}
 		@include respond-to(large-desktop) {
-			background-image: url('arrow.png');
+			background-image: url('images/arrow.png');
 			background-repeat: no-repeat;
-			background-position: 15px -50px;
+			background-position: -5px 50px;
 		}
 		@include respond-to(tablet-landscape-desktop) {
-			background-image: url('arrow.png');
+			background-image: url('images/arrow.png');
 			background-repeat: no-repeat;
 			background-position: -20px -50px;
 		}
@@ -105,13 +105,14 @@ $dark:	#444444;
 	h2 {
 		font-weight: 400;
 		font-size: 22px;
+		line-height: 28px;
 		margin: 0;
 	}
 	h3 {
 		color: $teal;
 		font-size: 22px;
 		font-weight: 400;
-		line-height: 24px;
+		line-height: 30px;
 		margin: 0;
 	}
 	.year {
@@ -121,14 +122,22 @@ $dark:	#444444;
 		line-height: 30px;
 		text-align: center;
 	}
+	#acpac-sidebar {
+		text-align: center;
+		figure {
+			margin-bottom: 20px;
+			p {
+				font-size: 11px;
+				line-height: 15px;
+			}
+		}
+	}
 	#footnotes {
 		li {
 			color: $dark;
 			font-size: 10px;
 		}
 	}
-	
-	
 	.well-blue {
 		background: $teal;
 	}
@@ -147,4 +156,23 @@ $dark:	#444444;
 	.margin-bottom-30 {
 		margin-bottom: 30px;
 	}
+	.margin-right-5 {
+		margin-right: 5px;
+	}
+	.margin-left-5 {
+		margin-left: 5px;
+	}		
+	.margin-right-10 {
+		margin-right: 10px;
+	}
+	.margin-left-10 {
+		margin-left: 10px;
+	}
+}
+
+.container-padded {
+	padding: 0 20px;
+}
+.container {
+	@media (min-width:979px) { max-width: 940px; }
 }
